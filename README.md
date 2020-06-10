@@ -1,20 +1,37 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Watson-Webchat
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+## Introduction 
+This is a Node.js application that hosts a fullscreen web chat that integrates with IBM Watson Assistant. This application can be loaded into an iframe, which allows you to integrate it into a website.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Prerequisites
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+- Install Node 12+ and npm (which is included with the node installer): [download page](https://nodejs.org/en/download/)
+- You have a Watson Assistant project and enabled the [Web Chat integration](https://cloud.ibm.com/docs/assistant?topic=assistant-deploy-web-chat) (this requires the Plus or Premium plan)
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## How to run the application
+
+1. Open your favorite command line tool
+2. `cd` to the root directory of this repository
+3. Install dependencies
+    - Run `npm install` (use `npm ci` when implementing CI/CD)
+4. Setup environment variables
+    - Copy the contents of the `env-example` file to a new file named `.env`
+    - ❗️ Make sure to provide values for every variable listed below `# Required`
+    - Read [Watson Assistant Web Chat - Getting started](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=tutorials-getting-started) to find out how to get the Watson settings
+5. Start the application
+    - Run `npm run start`
+6. The console should now show what the url is for accessing it
+
+## Contribute
+
+If you would like to contribute to this project, you are very welcome to do so. You can either fork this project and make Pull Requests from there, or [Create an issue](https://github.com/EdwinOtten/Watson-Webchat/issues/new) and ask me to add you as a collaborator.
+
+## License
+
+This software is published under the [ISC License](https://opensource.org/licenses/ISC). Which basically means _"free to use for whatever you want as long as you include the copyright notice"_, which you can find in the [LICENSE file](LICENSE)).
+
+---
+
+## What does it look like?
+
+![Screenshot](readme-assets/screenshot.png)

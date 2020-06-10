@@ -1,0 +1,23 @@
+{
+  "name": "watson-webchat",
+  "version": "0.0.1",
+  "description": "A Node.js web application that shows a Watson Assistant chat window",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:EdwinOtten/Watson-Webchat.git"
+  },
+  "author": "Edwin Otten",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-session": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "uuid": "^8.1.0"
+  }
+}
