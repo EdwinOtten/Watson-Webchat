@@ -60,7 +60,7 @@ app.get('/', async(req, res) => {
 
     const jwt = generateJWT(req.session.id);
 
-    res.send(`<html>
+    res.send(`<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
