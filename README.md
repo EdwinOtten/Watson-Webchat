@@ -3,6 +3,14 @@
 ## Introduction 
 This is a Node.js application that hosts a fullscreen web chat that integrates with IBM Watson Assistant. This application can be loaded into an iframe, which allows you to integrate it into a website.
 
+## Technologies used
+
+### Express
+This application is based on a Node.js Express server, which serves a small HTML page (you can find the code in [index.js](index.js)). 
+
+### IBM Webchat widget
+The HTML contains a script that loads [IBM's webchat widget](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html). The documentation also [describes](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=tutorials-carbon-themes). how you can customize the theme using pre-defined variables, as well as CSS.
+
 ## Prerequisites
 
 - Install Node 12+ and npm (which is included with the node installer): [download page](https://nodejs.org/en/download/)
