@@ -47,7 +47,7 @@ function generateJWT(userId) {
         sub: userId
     };
     // The "expiresIn" option adds an "exp" claim to the payload. It is highly recommended you add an exp claim.
-    return jwt.sign(payload, process.env.WATSON_RSA_KEY, { algorithm: 'RS256', expiresIn: '10000ms' });
+    return jwt.sign(payload, process.env.WATSON_RSA_KEY, { algorithm: 'RS256', expiresIn: cookieMaxAge+'ms' });
 }
 
 app.get('/', async(req, res) => {
