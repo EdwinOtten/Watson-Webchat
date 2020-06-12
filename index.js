@@ -8,6 +8,7 @@ const jwt = require('jsonwebtoken');
 const port = process.env.PORT || 3000
 const environment = process.env.ENVIRONMENT || 'production'
 const cookieMaxAge = process.env.COOKIE_MAX_AGE || 1000 * 60 * 60 * 24 * 365 // one year
+const jwtMaxAge = process.env.JWT_MAX_AGE || 1000 * 60 * 60 // one hour
 
 function checkEnvVariable(name) {
     if (!process.env[name]) {
@@ -47,7 +48,7 @@ function generateJWT(userId) {
         sub: userId
     };
     // The "expiresIn" option adds an "exp" claim to the payload. It is highly recommended you add an exp claim.
-    return jwt.sign(payload, process.env.WATSON_RSA_KEY, { algorithm: 'RS256', expiresIn: cookieMaxAge+'ms' });
+    return jwt.sign(payload, process.env.WATSON_RSA_KEY, { algorithm: 'RS256', expiresIn: jwtMaxAge+'ms' });
 }
 
 app.get('/', async(req, res) => {
