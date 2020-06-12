@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 // Set default values if not provided
 const port = process.env.PORT || 3000
 const environment = process.env.ENVIRONMENT || 'production'
-const cookieMaxAge = process.env.COOKIE_MAX_AGE || 1000 * 60 * 60 * 24 * 365, // one year
+const cookieMaxAge = process.env.COOKIE_MAX_AGE || 1000 * 60 * 60 * 24 * 365 // one year
 
 function checkEnvVariable(name) {
     if (!process.env[name]) {
