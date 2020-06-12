@@ -51,7 +51,6 @@ function generateJWT(userId) {
 }
 
 app.get('/', async(req, res) => {
-
     if (req.query.secret !== process.env.QUERY_STRING_SECRET) {
         res.status(401);
         res.send('Unauthorized')
