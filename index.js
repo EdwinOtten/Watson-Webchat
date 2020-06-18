@@ -24,6 +24,11 @@ checkEnvVariable('WATSON_INTEGRATION_REGION')
 checkEnvVariable('WATSON_SERVICE_INSTANCE_ID')
 checkEnvVariable('WATSON_RSA_KEY')
 
+const watsonRSAKey = process.env.WATSON_RSA_KEY
+    .replace(new RegExp('\\\\n', '\g'), '\n')
+    .replace(new RegExp('\\\n', '\g'), '\n')
+    .replace(new RegExp('\\n', '\g'), '\n');
+
 const app = express()
 
 // cookie-session middleware
@@ -48,7 +53,7 @@ function generateJWT(userId) {
         sub: userId
     };
     // The "expiresIn" option adds an "exp" claim to the payload. It is highly recommended you add an exp claim.
-    return jwt.sign(payload, process.env.WATSON_RSA_KEY, { algorithm: 'RS256', expiresIn: jwtMaxAge+'ms' });
+    return jwt.sign(payload, watsonRSAKey, { algorithm: 'RS256', expiresIn: jwtMaxAge+'ms' });
 }
 
 app.get('/', async(req, res) => {
